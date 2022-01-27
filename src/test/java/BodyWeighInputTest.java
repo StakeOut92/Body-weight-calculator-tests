@@ -96,7 +96,7 @@ public class BodyWeighInputTest {
     }
 
     @Test
-    public void enterDigitsToWeighAndCmsFieldsForObeseResultTest(){
+    public void enterDigitsToWeighAndCmsFieldsForObeseResultTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         //Open start page
@@ -116,4 +116,29 @@ public class BodyWeighInputTest {
         }
         driver.quit();
     }
+
+    @Test
+    public void findObeseResultWithNameTest() {
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        //Open start page
+        driver.get("https://healthunify.com/bmicalculator/");
+        //Input weight in field
+        driver.findElement(By.name("wg")).sendKeys("140");
+        //Input cms in field
+        driver.findElement(By.name("ht")).sendKeys("183");
+        //Click 'Calculate' button
+        driver.findElement(By.cssSelector("[value=Calculate]")).click();
+        //Check message 'Starvation' is show
+        String value = driver.findElement(By.name("desc")).getAttribute("value");
+        if (value.contains("Obese")) {
+            System.out.println("Message 'Obese' is show");
+        } else {
+            Assert.fail("'Obese' message is not show");
+        }
+        driver.quit();
+    }
+
 }
+
+
