@@ -59,8 +59,6 @@ public class MySiteOutputTest {
         //Click button 'Click me,please' and check alert window
         driver.findElement(By.id("elem")).click();
         driver.switchTo().alert().accept();
-        Assert.fail("Click me button is not enable");
-        Assert.fail("Alert window is not enable");
     }
 
     @Test
