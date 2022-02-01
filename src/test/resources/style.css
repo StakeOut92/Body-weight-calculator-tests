@@ -1,0 +1,24 @@
+h1{
+color: #00FF00;
+text-align: center;
+text-decoration-line: underline;
+font-family: Comic Sans MS;
+}
+
+h2{
+color: #FFFF00;
+font-size: xx-large;
+text-align: center;
+font-family: fantasy;
+}
+
+p{
+font-size: large;
+text-align: center;
+font-family: fantasy;
+}
+
+form{
+text-align: center;
+
+}
